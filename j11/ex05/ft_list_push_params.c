@@ -28,6 +28,8 @@ t_list	*ft_list_push_params(int ac, char **av)
 	t_list	*new_list;
 
 	i = 1;
+	if (ac == 1)
+		return (0);
 	new_list = ft_create_elem(av[0]);
 	while (i < ac - 1)
 	{
