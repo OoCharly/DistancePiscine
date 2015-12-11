@@ -15,8 +15,8 @@
 
 t_opp gl_opptab[] =
 {
-	{"-", &ft_sub},
 	{"+", &ft_add},
+	{"-", &ft_sub},
 	{"*", &ft_mul},
 	{"/", &ft_div},
 	{"%", &ft_mod},

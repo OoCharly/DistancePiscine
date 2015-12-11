@@ -18,7 +18,7 @@ void	ft_usage(int a, int b)
 	a = 0;
 	b = 0;
 	ft_putstr("error : only [");
-	while (gl_opptab[a].opp[0])
+	while (gl_opptab[a].opp[b])
 	{
 		ft_putstr(" ");
 		ft_putstr(gl_opptab[a].opp);
