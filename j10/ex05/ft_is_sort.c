@@ -38,8 +38,6 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int i;
 
-	if (tab == NULL)
-		return (0);
 	if (length == 1 || length == 0)
 		return (1);
 	i = 0;
@@ -52,6 +50,5 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 		if ((*f)(tab[i], tab[i + 1]) > 0 && i < length - 1)
 			return (ft_is_decreasing(tab, length, f, i));
 	}
-	else
-		return (1);
+	return (1);
 }
