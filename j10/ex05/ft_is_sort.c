@@ -55,15 +55,3 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 	else
 		return (1);
 }
-
-
-int sub(int a, int b){
-	return(a - b);
-}
-
-int main(){
-	int	tab[] = {1, 4, 6, 10};
-	int	l = -1;
-
-	printf("reponse %d", ft_is_sort(tab, -1, sub));
-}
