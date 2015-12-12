@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 01:07:30 by cdesvern          #+#    #+#             */
-/*   Updated: 2015/12/12 11:58:20 by cdesvern         ###   ########.fr       */
+/*   Updated: 2015/12/12 15:15:36 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_swap(t_list *a, t_list *b)
 {
 	void		*t;
 
-	t = (*a)->data;
-	(*a)->data = (*b)->data;
-	(*b)->data = t;
+	t = (a)->data;
+	(a)->data = (b)->data;
+	(b)->data = t;
 }
 
 int		ft_list_size(t_list *begin_list)
@@ -49,7 +49,7 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)())
 	int		len;
 	int		ct;
 
-	len = ft_list_size(*beginlist);
+	len = ft_list_size(*begin_list);
 	i = 0;
 	ct = 0;
 	while (ct < len)
