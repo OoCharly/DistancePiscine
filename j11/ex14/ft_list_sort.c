@@ -15,7 +15,7 @@
 
 void	ft_swap(t_list *a, t_list *b)
 {
-	 void	*t;
+	void	*t;
 
 	t = (*a)->data;
 	(*a)->data = (*b)->data;
@@ -54,7 +54,7 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)())
 	ct = 0;
 	while (ct < len)
 	{
-		while (i < len -2)
+		while (i < len - 2)
 		{
 			if ((*cmp)(at(*begin_list, i), at(*begin_list, i + 1)) > 0)
 				ft_swap(at(*begin_list, i), at(*begin_list, i + 1));

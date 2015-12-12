@@ -29,5 +29,5 @@ void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 		tmp->next = begin_list2;
 	}
 	else
-		begin_list1 = begin_list2;
+		*begin_list1 = begin_list2;
 }
