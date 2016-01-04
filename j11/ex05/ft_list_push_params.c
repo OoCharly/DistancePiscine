@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/03 20:27:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2015/12/12 14:46:01 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/04 13:59:14 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_list_push_params(int ac, char **av)
 		return (0);
 	new_list = ft_create_elem(av[i]);
 	i--;
-	while (i > 0)
+	while (i >= 0)
 	{
 		ft_list_push_back(&new_list, av[i]);
 		i--;
