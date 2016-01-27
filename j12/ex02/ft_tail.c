@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 09:02:48 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/12 20:00:29 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:45:26 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_fsize(char *fn, char *ft)
 {
-	int	fd;
-	int	size;
-	int	n;
+	int		fd;
+	int		size;
+	int		n;
 	char	buff;
 
 	size = 0;
@@ -36,8 +36,8 @@ int	ft_fsize(char *fn, char *ft)
 
 int	ft_tail(char *fn, char *ft, int offset)
 {
-	int	fd;
-	int	n;
+	int		fd;
+	int		n;
 	char	*buff;
 
 	if (!(buff = malloc(sizeof(*buff) * offset)))
@@ -86,31 +86,29 @@ int	ft_offset(char **av, int opt, int size)
 
 int	main(int ac, char **av)
 {
-	int	i;
-	int	out;
-	int	opt;
-	int	offset;
+	int		i;
+	int		tab[3];
 
 	i = 1;
-	out = 0;
+	tab[0] = 0;
 	if (ac <= 1)
-		return (out);
-	opt = ft_get_offset_pos(av);
-	if (opt < 0)
+		return (tab[0]);
+	tab[1] = ft_get_offset_pos(av);
+	if (tab[1] < 0)
 		return (1);
 	while (av[i])
 	{
-		if (i != opt && i != (opt - 1))
+		if (i != tab[1] && i != (tab[1] - 1))
 		{
-			if (ft_fsize(av[i],av[0]) > 0)
+			if (ft_fsize(av[i], av[0]) > 0)
 			{
-				offset = ft_offset(av, opt, ft_fsize(av[i],av[0]));
-				ft_tail(av[i],av[0],offset);
+				tab[2] = ft_offset(av, tab[1], ft_fsize(av[i], av[0]));
+				ft_tail(av[i], av[0], tab[2]);
 			}
 			else
-				out = 1;
+				tab[0] = 1;
 		}
 		i++;
 	}
-	return (out);
+	return (tab[0]);
 }
