@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 11:51:20 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:21:29 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:31:38 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_print_offset(int ct)
 {
 	char	nbr[7];
-	int	i;
+	int		i;
 
 	i = 0;
 	nbr[0] = ft_itoh(ct / 16777216);
@@ -25,14 +25,13 @@ void	ft_print_offset(int ct)
 	nbr[4] = ft_itoh((ct / 256) % 16);
 	nbr[5] = ft_itoh((ct / 16) % 16);
 	nbr[6] = ft_itoh(ct % 16);
-
 	while (i < 7)
 		write(1, &nbr[i++], 1);
 }
 
 void	i_am_not_printable(char c)
 {
-	if (c != 0 && !( c > 6 && c < 14))
+	if (c != 0 && !(c > 6 && c < 14))
 		ctooct(c);
 	else
 	{
@@ -55,10 +54,9 @@ void	i_am_not_printable(char c)
 	}
 }
 
-
 void	ft_print_line(char *buff, int n)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (i < n)

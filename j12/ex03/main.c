@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:48:33 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/21 17:37:59 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:32:16 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 	{
 		if (i != opt)
 		{
-			if(ft_read_file(av[i], av[0]))
+			if (ft_read_file(av[i], av[0]))
 				out = 1;
 		}
 		i++;

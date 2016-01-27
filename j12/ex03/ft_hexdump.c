@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 20:40:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:24:43 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:33:45 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	i_am_legion(char *str, char *a)
 {
-	int	i;
+	int		i;
 	char	tmp;
 
 	if (*a >= 0)
@@ -82,9 +82,9 @@ int	test(int *ct, char *buff, int fd, int n)
 
 int	ft_read_file(char *fn, char *ft)
 {
-	int	ct;
-	int	fd;
-	int	n;
+	int		ct;
+	int		fd;
+	int		n;
 	char	buff[16];
 
 	ct = 0;
