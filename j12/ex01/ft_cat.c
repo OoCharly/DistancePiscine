@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 14:58:08 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 18:53:03 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 21:15:21 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int		ft_display_file(char *file)
 	return (0);
 }
 
-int		ft_puterr(char *ft, char *fn, int er)
+int		ft_puterr(char *fn, int er)
 {
 	if (er)
 	{
-		ft_putstr(ft, 2);
+		ft_putstr("cat", 2);
 		ft_putstr(": ", 2);
 		ft_putstr(fn, 2);
 		ft_putstr(": ", 2);
@@ -82,7 +82,7 @@ int		main(int ac, char **av)
 	{
 		while (i < ac)
 		{
-			if (ft_puterr(av[0], av[i], ft_display_file(av[i])))
+			if (ft_puterr(av[i], ft_display_file(av[i])))
 				out = 1;
 			i++;
 		}
