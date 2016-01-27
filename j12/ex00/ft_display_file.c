@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 13:45:47 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/05 17:51:59 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 21:29:29 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_display(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		write(2, "open() failed", 13);
+		write(2, "open() failed\n", 14);
 		return (0);
 	}
 	n = read(fd, tab, 4096);
@@ -36,7 +36,7 @@ int		ft_display(char *file)
 	}
 	if (close(fd) < 0)
 	{
-		write(2, "close() failed", 13);
+		write(2, "close() failed\n", 14);
 		return (0);
 	}
 	return (1);
@@ -46,12 +46,12 @@ int		main(int ac, char **av)
 {
 	if (ac < 2)
 	{
-		write(2, "File name missing.", 18);
+		write(2, "File name missing.\n", 19);
 		return (1);
 	}
 	if (ac > 2)
 	{
-		write(2, "Too many arguments.", 19);
+		write(2, "Too many arguments.\n", 20);
 		return (1);
 	}
 	if (ft_display(av[1]))
