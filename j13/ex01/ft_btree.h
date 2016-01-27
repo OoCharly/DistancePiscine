@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 17:02:57 by cdesvern          #+#    #+#             */
-/*   Updated: 2015/11/04 20:47:07 by cdesvern         ###   ########.fr       */
+/*   Created: 2016/01/27 19:04:58 by cdesvern          #+#    #+#             */
+/*   Updated: 2016/01/27 19:11:18 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BTREE_H
 # define FT_BTREE_H
 
+# include<stdlib.h>
+
 typedef struct		s_btree
 {
 	struct s_btree	*left;
 	struct s_btree	*right;
-	void			*item;
-}					t_btree;
-
-# include <stdlib.h>
+	void		*item;
+}			t_btree;
+t_btree	btree_create_node(void *item);
 
 #endif
