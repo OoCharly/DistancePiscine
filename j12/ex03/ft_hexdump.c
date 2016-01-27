@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 20:40:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:50:51 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:58:48 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	we_are_legion(char *buff, char *a, int fd, int *ct)
 int	test(int *ct, char *buff, int fd, int n)
 {
 	char	a;
-	
+
 	a = -1;
 	ft_print_hex(*ct, n, buff);
 	if (i_am_legion(buff, &a))
