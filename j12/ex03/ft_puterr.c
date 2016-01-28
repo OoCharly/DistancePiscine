@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:00:34 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 11:13:18 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 14:13:55 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,18 @@ int		ft_puterr(char *fn, int er)
 {
 	if (er == ENOMEM)
 		return (-1);
-	ft_putstr("hexdump", 7);
+	ft_putstr("hexdump", 2);
 	ft_putstr(": ", 2);
 	ft_putstr(fn, 2);
 	ft_putstr(": ", 2);
 	if (er == EACCES)
 		ft_putstr("Permission denied\n", 2);
 	if (er == ENOENT)
+	{
 		ft_putstr("No such file or directory\n", 2);
+		ft_puterr(fn, EBADF);
+	}
+	if (er == EBADF)
+		ft_putstr("Bad file descriptor\n", 2);
 	return (-1);
 }

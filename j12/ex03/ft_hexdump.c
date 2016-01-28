@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 20:40:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 13:41:15 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 14:34:35 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	incomplete_line(char *str)
 	while (i < 16)
 	{
 		if (str[i] < 0)
-			return (2 * ((i / 2) + (i % 2)));
+			return (i);
 		i++;
 	}
 	return (0);
@@ -70,7 +70,7 @@ int	ft_hexdump(int opt, char *buff)
 
 	a = -1;
 	ct = 0;
-	while (!(ct % 16))
+	while (!(ct % 16) && buff[ct] != -1)
 	{
 		ct += ft_print_hex(&ct, buff, opt);
 		if (i_am_legion(&buff[ct], &a) && !(ct % 16))

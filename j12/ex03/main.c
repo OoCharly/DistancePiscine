@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:48:33 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 13:54:43 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 14:34:45 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,10 @@ int	main(int ac, char **av)
 			file = ft_file_to_string(file, av[i]);
 		i++;
 	}
-	ft_print_offset(ft_hexdump(opt, file));
-	write(1, "\n", 1);
+	if (*file != -1)
+	{
+		ft_print_offset(ft_hexdump(opt, file));
+		write(1, "\n", 1);
+	}
 	return (0);
 }

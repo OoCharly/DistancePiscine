@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 11:51:20 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 13:53:23 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 14:22:10 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,9 @@ void	ft_print_hex_line(char *buff, int n)
 int	ft_print_hex(int *ct, char *buff, int opt)
 {
 	int	n;
-	int	add;
 
 	n = incomplete_line(&buff[*ct]);
-	add = (n == 0) ? 16 : n;
-	n = 16 - n;
+	n = (n == 0) ? 16 : n;
 	ft_print_offset(*ct);
 	if (opt)
 	{
@@ -124,5 +122,5 @@ int	ft_print_hex(int *ct, char *buff, int opt)
 	{
 		ft_print_hex_line(&buff[*ct], n);
 	}
-	return (add);
+	return (n);
 }
