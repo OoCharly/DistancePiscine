@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 16:40:32 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/21 17:43:42 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/27 22:29:00 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,13 @@ char	ft_itoh(int nbr)
 	if (nbr == 15)
 		return ('f');
 	return ('u');
+}
+
+void	ft_char_to_hex(char a)
+{
+	char out[2];
+
+	out[0] = ft_itoh(a / 16);
+	out[1] = ft_itoh(a %16);
+	write(1, out, 2);
 }

@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:00:34 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:31:12 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 00:19:28 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	ft_putstr(char *str, int out)
 	}
 }
 
-int		ft_puterr(char *ft, char *fn, int er)
+int		ft_puterr(char *fn, int er)
 {
 	if (er == ENOMEM)
 		return (-1);
-	ft_putstr(ft, 2);
+	ft_putstr("hexdump", 7);
 	ft_putstr(": ", 2);
 	ft_putstr(fn, 2);
 	ft_putstr(": ", 2);

@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 20:40:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:58:48 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 00:19:23 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	test(int *ct, char *buff, int fd, int n)
 	return (n);
 }
 
-int	ft_read_file(char *fn, char *ft)
+int	ft_read_file(char *fn, int opt)
 {
 	int		ct;
 	int		fd;
@@ -88,12 +88,12 @@ int	ft_read_file(char *fn, char *ft)
 	char	buff[16];
 
 	ct = 0;
-	fd = open(fn, O_RDONLY);
-	if (fd < 0)
-		return (ft_puterr(ft, fn, errno));
 	n = read(fd, &buff, 16);
 	while (n == 16)
+	{
+		ft_print_hex(*ct, n, buff, opt);
 		n = test(&ct, buff, fd, n);
+	}
 	if (n)
 	{
 		ft_print_hex(ct, n, buff);
@@ -101,7 +101,5 @@ int	ft_read_file(char *fn, char *ft)
 	}
 	ft_print_offset(ct);
 	write(1, "\n", 1);
-	if (close(fd) < 0)
-		return (ft_puterr(ft, fn, errno));
 	return (0);
 }
