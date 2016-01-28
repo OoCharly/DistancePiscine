@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 14:49:57 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 15:22:35 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:26:17 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	ft_display_name(char *str, int i)
 	ft_putstr(" <==\n", 1);
 }
 
-int	ft_compress(int ac, char **av, int opt)
+int		ft_compress(int ac, char **av, int opt)
 {
 	int	i;
 	int	out;
 	int	ofs;
-	
+
 	out = 0;
-	ofs =0;
+	ofs = 0;
 	i = 1;
 	while (av[i])
 	{

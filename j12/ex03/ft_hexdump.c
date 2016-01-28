@@ -6,13 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 20:40:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 14:36:30 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:33:05 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j12_03.h"
 
-int	i_am_legion(char *str, char *a)
+int		i_am_legion(char *str, char *a)
 {
 	int		i;
 	char	tmp;
@@ -40,16 +40,16 @@ int	i_am_legion(char *str, char *a)
 void	we_are_legion(char *buff, char *a, int *ct, int opt)
 {
 	*ct += ft_print_hex(ct, buff, opt);
-	if(i_am_legion(&buff[*ct], a))
+	if (i_am_legion(&buff[*ct], a))
 	{
 		write(1, "*\n", 2);
-		*ct +=16;
-		while(!incomplete_line(&buff[*ct]) && i_am_legion(&buff[*ct], a))
+		*ct += 16;
+		while (!incomplete_line(&buff[*ct]) && i_am_legion(&buff[*ct], a))
 			*ct += 16;
-	}	
+	}
 }
 
-int	incomplete_line(char *str)
+int		incomplete_line(char *str)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ int	incomplete_line(char *str)
 	return (0);
 }
 
-int	ft_hexdump(int opt, char *buff)
+int		ft_hexdump(int opt, char *buff)
 {
 	int		ct;
 	char	a;

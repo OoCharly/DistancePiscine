@@ -6,15 +6,15 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:00:34 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 14:13:55 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:29:46 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j12_03.h"
 
-int	ft_open(char *filename)
+int		ft_open(char *filename)
 {
-	int	fd;
+	int		fd;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)

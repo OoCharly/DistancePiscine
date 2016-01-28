@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:48:33 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 14:36:25 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:30:32 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ char	*ft_file_to_string(char *file, char *filename)
 	return (file);
 }
 
-int	ft_get_option_pos(char **av)
+int		ft_get_option_pos(char **av)
 {
-	int	i;
+	int		i;
 
 	i = 1;
 	while (av[i])
@@ -79,10 +79,10 @@ int	ft_get_option_pos(char **av)
 	return (0);
 }
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
-	int	i;
-	int	opt;
+	int		i;
+	int		opt;
 	char	*file;
 
 	opt = ft_get_option_pos(av);

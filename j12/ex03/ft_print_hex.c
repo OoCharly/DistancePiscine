@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 11:51:20 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 14:22:10 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:28:34 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,12 @@ void	ft_print_hex_line(char *buff, int n)
 			if (buff[i + 1] >= 0)
 				ft_char_to_hex(buff[i + 1]);
 			else
-				write(1, "00",2);
+				write(1, "00", 2);
 			ft_char_to_hex(buff[i]);
 			i += 2;
 		}
 		else
-			break;
+			break ;
 	}
 	while (i < 16)
 	{
@@ -107,9 +107,9 @@ void	ft_print_hex_line(char *buff, int n)
 	write(1, "\n", 1);
 }
 
-int	ft_print_hex(int *ct, char *buff, int opt)
+int		ft_print_hex(int *ct, char *buff, int opt)
 {
-	int	n;
+	int		n;
 
 	n = incomplete_line(&buff[*ct]);
 	n = (n == 0) ? 16 : n;
