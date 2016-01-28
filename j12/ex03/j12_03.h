@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:29:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 17:57:49 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 13:56:54 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@
 # include <stdlib.h>
 # include <errno.h>
 
-void	ft_print_hex(int ct, int n, char *buff);
-int		ft_puterr(char *ft, char *fn, int er);
+int		ft_print_hex(int *ct, char *buff, int opt);
+int		ft_puterr(char *fn, int er);
 void	ft_print_offset(int ct);
 void	ctooct(char c);
 char	ft_itoh(int nbr);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_read_file(char *fn, char *ft);
+int		incomplete_line(char *str);
+void	ft_char_to_hex(char a);
+int		ft_strlen(char *str);
+int		ft_open(char *filename);
+int		ft_hexdump(int opt, char *buff);
 
 #endif

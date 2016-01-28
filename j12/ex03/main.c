@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:48:33 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 00:19:20 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 13:54:43 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,34 +28,41 @@ char	*ft_concat_realloc(char *str, char *tmp, int n)
 	}
 	free(str);
 	i = 0;
+	if (len == 0)
+		i++;
 	while (i < n)
 	{
-		new_str[i + len] = tmp[i];
+		new_str[i + len - 1] = tmp[i - 1];
 		i++;
 	}
+	new_str[i + len - 1] = -1;
 	return (new_str);
 }
 
-char	*ft_file_to_string(int fd)
+char	*ft_file_to_string(char *file, char *filename)
 {
 	int		n;
-	char	*str;
 	char	*tmp;
 	int		i;
+	int		fd;
 
+	fd = ft_open(filename);
+	if (fd < 0)
+		return (file);
 	i = 0;
 	n = 4000;
 	tmp = malloc(sizeof(*tmp) * 4000);
 	while (n == 4000)
 	{
-		n = read(fd, tmp, pas);
-		tmp[n] = '\0';
+		n = read(fd, tmp, 4000);
+		tmp[n] = -1;
 		if (n != 0)
-			str = ft_concat_realloc(str, tmp, n + 1);
+			file = ft_concat_realloc(file, tmp, n + 1);
 		i++;
 	}
-	str[((i - 1) * pas) + n] = '\0';
-	return (str);
+	if (close(fd) < 0)
+		ft_puterr(filename, errno);
+	return (file);
 }
 
 int	ft_get_option_pos(char **av)
@@ -76,28 +83,22 @@ int	main(int ac, char **av)
 {
 	int	i;
 	int	opt;
-	int	fd;
+	char	*file;
 
 	opt = ft_get_option_pos(av);
 	if (ac < 2 || (ac == 2 && opt))
 		return (0);
+	if (!(file = malloc(sizeof(char))))
+		return (1);
+	*file = -1;
 	i = 1;
 	while (av[i])
 	{
 		if (i != opt)
-		{
-			fd = open(av[i], O_RDONLY);
-			if (fd < 0)
-				ft_puterr(av[i], errno);
-			else
-				ft_read_file(av[i], opt);
-			if (fd >= 0)
-			{
-				if (close(fd) < 0)
-					ft_puterr(ft, fn, errno);
-			}
-		}
+			file = ft_file_to_string(file, av[i]);
 		i++;
 	}
+	ft_print_offset(ft_hexdump(opt, file));
+	write(1, "\n", 1);
 	return (0);
 }

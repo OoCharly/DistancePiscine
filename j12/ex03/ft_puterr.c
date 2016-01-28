@@ -6,11 +6,25 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:00:34 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 00:19:28 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 11:13:18 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j12_03.h"
+
+int	ft_open(char *filename)
+{
+	int	fd;
+
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+	{
+		ft_puterr(filename, errno);
+		return (fd);
+	}
+	else
+		return (fd);
+}
 
 void	ft_putstr(char *str, int out)
 {

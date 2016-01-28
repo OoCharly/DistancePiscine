@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 11:51:20 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 22:30:08 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 13:53:23 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_print_line(char *buff, int n)
 	int		i;
 
 	i = 0;
-	while (i < n)
+	while (i < n && buff[i] != -1)
 	{
 		write(1, " ", 1);
 		if (buff[i] > 31 && buff[i] < 127)
@@ -86,27 +86,43 @@ void	ft_print_hex_line(char *buff, int n)
 	i = 0;
 	while (i < n)
 	{
-		write(1, " ", 1);
-		if (buff[i + 1])
-			ft_put_hex_char(buff[i + 1]);
+		if (buff[i] >= 0)
+		{
+			write(1, " ", 1);
+			if (buff[i + 1] >= 0)
+				ft_char_to_hex(buff[i + 1]);
+			else
+				write(1, "00",2);
+			ft_char_to_hex(buff[i]);
+			i += 2;
+		}
 		else
-			write(1, "00",2);
-		ft_hex_to_car(buff[i]);
-		i += 2;
+			break;
 	}
 	while (i < 16)
 	{
-		write(1, "    ", 3);
+		write(1, "   ", 3);
 		i++;
 	}
 	write(1, "\n", 1);
 }
 
-void	ft_print_hex(int ct, int n, char *buff, int opt)
+int	ft_print_hex(int *ct, char *buff, int opt)
 {
-	ft_print_offset(ct);
+	int	n;
+	int	add;
+
+	n = incomplete_line(&buff[*ct]);
+	add = (n == 0) ? 16 : n;
+	n = 16 - n;
+	ft_print_offset(*ct);
 	if (opt)
-		ft_print_line(buff, n);
+	{
+		ft_print_line(&buff[*ct], n);
+	}
 	else
-		ft_print_hex_line(buff, n);
+	{
+		ft_print_hex_line(&buff[*ct], n);
+	}
+	return (add);
 }

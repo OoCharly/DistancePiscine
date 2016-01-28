@@ -6,9 +6,19 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 13:04:18 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/12 19:38:57 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 13:07:53 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int		ft_strlen(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] >= 0)
+		i++;
+	return (i);
+}
 
 int		ft_strcmp(char *s1, char *s2)
 {
@@ -49,8 +59,8 @@ int		ft_atoi(char *str)
 	while (str[i])
 	{
 		if ((str[i] >= '0' && str[i] <= '9') || (str[i] == '-' &&
-		str[i + 1] >= '0' && str[i + 1] <= '9') || (str[i] == '+' &&
-		str[i + 1] >= '0' && str[i + 1] <= '9'))
+					str[i + 1] >= '0' && str[i + 1] <= '9') || (str[i] == '+' &&
+						str[i + 1] >= '0' && str[i + 1] <= '9'))
 			return (i_am_number(i, &str[0]));
 		if (str[i] != ' ' && str[i] != 9 && str[i] != 10)
 			return (0);
