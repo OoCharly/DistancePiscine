@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 09:02:48 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/28 15:16:20 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/01/28 16:24:59 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,22 @@ int	ft_tail(char *fn, int offset)
 	int		fd;
 	int		n;
 	char	*buff;
+	int		ofs;
 
-	if (!(buff = malloc(sizeof(*buff) * offset)))
+	ofs = offset;
+	if (offset == 0)
+		ofs = 4000;
+	if (!(buff = malloc(sizeof(*buff) * ofs)))
 		return (ft_puterr(fn, errno));
 	fd = open(fn, O_RDONLY);
 	if (fd < 0)
 		return (ft_puterr(fn, errno));
-	n = read(fd, buff, offset);
+	n = read(fd, buff, ofs);
+	if (offset == 0)
+		write(1, buff, n);
 	while (n)
 	{
-		n = read(fd, buff, offset);
+		n = read(fd, buff, ofs);
 		write(1, buff, n);
 	}
 	if (close(fd) < 0)
