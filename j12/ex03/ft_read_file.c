@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:16:17 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 18:50:14 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 19:28:30 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		ft_create_buffer(int *fd, int *i, char **av, char *buff)
 	n = read(*fd, buff, 16);
 	while (n != 16)
 	{
+		printf("/n ici n=%d et fd=%d", n, *fd);
 		if (close(*fd) < 0)
 			return(ft_puterr(av[*i], errno));
 		if (ft_next_fd(fd, i, **av) < 0)

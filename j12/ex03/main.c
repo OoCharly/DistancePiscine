@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:11:42 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 18:29:43 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 19:28:28 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 int		ft_next_fd(int *fd, int *i, char **av)
 {
-	i++;
-	if (av[*i])
+	(*i) += 1;
+	dprintf(1, "yala");
+	if (i < 1)
 	{
+	dprintf(1, "yolo");
 		if (ft_open(av[*i], fd) < 0)
 			return(ft_next_fd(fd, i, av));
 		else
 			return (0);
 	}
 	else
+	dprintf(1, "yolout");
 		return (-1);
 }
 
@@ -33,7 +36,7 @@ int		ft_get_option_pos(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (!ft_strcmp(av[i], "-c"))
+		if (!ft_strcmp(av[i], "-C"))
 		{
 			g_option = 1;
 			return (i);
