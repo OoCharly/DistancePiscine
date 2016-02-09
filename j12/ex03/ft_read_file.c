@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:16:17 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/04 11:28:26 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 17:12:49 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,16 @@ int		we_are_legion(char *buff, int *ct, int fd)
 	return (n);
 }
 
-int		ft_create_buffer(int *fd, int i, char **av, char *buff)
+int		ft_create_buffer(int *fd, int *i, char **av, char *buff)
 {
 	int	n;
 
 	n = read(*fd, buff, 16)
 	while (n != 16)
 	{
-		if (!ft_next_fd(int *fd, i, **av))
+		if (close(*fd) < 0)
+			return(ft_puterr(av[i]));
+		if (ft_next_fd(int *fd, &i, **av) < 0)
 			return (n);
 		else
 			n += read(fd, &buff[n], 16 - n);
@@ -69,6 +71,6 @@ int		ft_create_buffer(int *fd, int i, char **av, char *buff)
 	return (n);
 }
 
-int		*ft_read_hexdump(int *fd, int opt, char *buff, int *ct)
+int		*ft_read_hexdump(int *fd, char *buff, int *ct)
 {
 }

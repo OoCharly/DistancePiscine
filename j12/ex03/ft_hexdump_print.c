@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:15:51 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/03 14:20:44 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 17:12:57 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_print_hexdump_C(char *buff, int n)
 	while (++i < n)
 	{
 		ft_char_to_hex(buff[i]);
-		if (!(i % 8)
+		if (!(i % 8))
 			write(1, " ", 1);
 	}
 	while (i < 16)
@@ -86,10 +86,10 @@ void	ft_print_hexdump_C(char *buff, int n)
 	write(1, "|\n", 2);
 }
 
-void	ft_print(char *buff, int opt, int n, int ct)
+void	ft_print(char *buff, int n, int ct)
 {
 	ft_print_offset(ct);
-	if (opt)
+	if (g_option)
 		ft_print_hexdump_C(buff, n);
 	else
 		ft_print_hexdump(buff, n);
