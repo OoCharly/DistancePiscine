@@ -6,13 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:16:17 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 17:12:49 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 18:50:14 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j12_03.h"
 
-int		i_am_not_legion(char *buff)
+int		am_i_legion(char *buff)
 {
 	int	i;
 
@@ -34,22 +34,23 @@ int		i_am_legion(char *buff, char a)
 	return (1);
 }
 
-int		we_are_legion(char *buff, int *ct, int fd)
+int		we_are_legion(int *fd, int *i, char **av, char *buff)
 {
 	int		n;
 	char	a;
-	int		i;
 
-	if (i_am_not_legion(buff))
-		return (read(fd, buff, 16));
-	n = read(fd, buff, 16);
+	if (!am_i_legion(buff))
+		return (ft_create_buffer(fd, i, av, buff));
+	a = buff[0];
+	n = ft_create_buffer(fd, i, av, buff);
 	if (n != 16 || !i_am_legion(buff, a))
 		return (n);
+	ft_print(buff, n);
 	write(1, "*\n", 2);
 	while (n == 16 && i_am_legion(buff, a))
 	{
-		*ct += n;
-		n = read(fd, buff, 16);
+		g_offset += n;
+		n = ft_create_buffer(fd, i, av, buff);
 	}
 	return (n);
 }
@@ -58,19 +59,15 @@ int		ft_create_buffer(int *fd, int *i, char **av, char *buff)
 {
 	int	n;
 
-	n = read(*fd, buff, 16)
+	n = read(*fd, buff, 16);
 	while (n != 16)
 	{
 		if (close(*fd) < 0)
-			return(ft_puterr(av[i]));
-		if (ft_next_fd(int *fd, &i, **av) < 0)
+			return(ft_puterr(av[*i], errno));
+		if (ft_next_fd(fd, i, **av) < 0)
 			return (n);
 		else
-			n += read(fd, &buff[n], 16 - n);
+			n += read(*fd, &buff[n], 16 - n);
 	}
 	return (n);
-}
-
-int		*ft_read_hexdump(int *fd, char *buff, int *ct)
-{
 }

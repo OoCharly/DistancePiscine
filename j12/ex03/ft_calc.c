@@ -6,20 +6,18 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 16:40:32 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/02 13:28:29 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 18:35:32 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j12_03.h"
 
-void	ctooct(char c)
+char	ft_dec_to_hex(int a)
 {
-	char out[3];
-
-	out[0] = c / 64 + 48;
-	out[1] = (c % 64) / 8 + 48;
-	out[2] = c % 8 + 48;
-	write(1, out, 3);
+	if (a < 10)
+		return (a + 48);
+	else
+		return (a + 87);
 }
 
 char	ft_itoh(int nbr)

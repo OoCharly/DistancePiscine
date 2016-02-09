@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:15:51 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 17:12:57 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/09 18:50:20 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,16 @@ void	ft_print_hexdump(char *buff,int n)
 	int	j;
 
 	i = 0;
-	j = n % 2;
-	while(i < (n - j))
+	while(i < n)
 	{
 		write(1, " ", 1);
-		ft_char_to_hex(buff[i + 1]);
 		ft_char_to_hex(buff[i]);
-		i += 2;
-	}
-	if (j)
-	{
-		write(1, " 00", 1);
-		ft_char_to_hex(buff[i]);
-		i += 2;
+		i ++;
 	}
 	while (i < 16)
 	{
-		write(1, "     ", 5);
-		i += 2;
+		write(1, "   ", 3);
+		i ++;
 	}
 	write(1, "\n", 1);
 }
@@ -71,7 +63,7 @@ void	ft_print_hexdump_C(char *buff, int n)
 	while (i < 16)
 	{
 		write(1, "   ", 3);
-		i++:
+		i++;
 	}
 	i = 0;
 	write(1, "  |", 3);
@@ -86,11 +78,12 @@ void	ft_print_hexdump_C(char *buff, int n)
 	write(1, "|\n", 2);
 }
 
-void	ft_print(char *buff, int n, int ct)
+void	ft_print(char *buff, int n)
 {
-	ft_print_offset(ct);
+	ft_print_offset(g_offset);
 	if (g_option)
 		ft_print_hexdump_C(buff, n);
 	else
 		ft_print_hexdump(buff, n);
+	g_offset += n;
 }
