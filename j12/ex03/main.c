@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:11:42 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 19:28:28 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/10 18:08:16 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_next_fd(int *fd, int *i, char **av)
 {
 	(*i) += 1;
 	dprintf(1, "yala");
-	if (i < 1)
+	if (av[*i])
 	{
 	dprintf(1, "yolo");
 		if (ft_open(av[*i], fd) < 0)
