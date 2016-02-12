@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:11:42 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/10 18:08:16 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 10:40:12 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 int		ft_next_fd(int *fd, int *i, char **av)
 {
 	(*i) += 1;
-	dprintf(1, "yala");
 	if (av[*i])
 	{
-	dprintf(1, "yolo");
 		if (ft_open(av[*i], fd) < 0)
 			return(ft_next_fd(fd, i, av));
 		else
 			return (0);
 	}
 	else
-	dprintf(1, "yolout");
 		return (-1);
 }
 
@@ -64,12 +61,12 @@ int		main(int ac, char **av)
 	while (ft_open(av[i], &fd) < 0 && av[i])
 		i++;
 	temp = ft_create_buffer(&fd, &i, av, buff);
-	ft_print(buff, temp);
 	while (temp == 16 && av[i])
 	{
-		temp = we_are_legion(&fd, &i, av, buff);
 		ft_print(buff, temp);
+		temp = we_are_legion(&fd, &i, av, buff);
 	}
+	ft_print(buff, temp);
 	ft_print_offset(g_offset);
 	write(1, "\n", 1);
 	return (0);

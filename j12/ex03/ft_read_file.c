@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:16:17 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/10 18:06:48 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 10:40:15 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,12 @@ int		we_are_legion(int *fd, int *i, char **av, char *buff)
 	int		n;
 	char	a;
 
-	if (!am_i_legion(buff))
+	if (am_i_legion(buff) > 0)
 		return (ft_create_buffer(fd, i, av, buff));
 	a = buff[0];
 	n = ft_create_buffer(fd, i, av, buff);
 	if (n != 16 || !i_am_legion(buff, a))
 		return (n);
-	ft_print(buff, n);
 	write(1, "*\n", 2);
 	while (n == 16 && i_am_legion(buff, a))
 	{
@@ -62,7 +61,6 @@ int		ft_create_buffer(int *fd, int *i, char **av, char *buff)
 	n = read(*fd, buff, 16);
 	while (n != 16)
 	{
-		printf("/n ici n=%d et fd=%d", n, *fd);
 		if (close(*fd) < 0)
 			return(ft_puterr(av[*i], errno));
 		if (ft_next_fd(fd, i, av) < 0)

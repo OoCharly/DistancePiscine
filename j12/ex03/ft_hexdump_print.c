@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:15:51 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/10 18:09:00 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 10:43:46 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_print_offset(int ct)
 void	ft_print_hexdump(char *buff,int n)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while(i < n)
