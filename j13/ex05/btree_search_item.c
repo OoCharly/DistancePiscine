@@ -6,13 +6,14 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/05 20:01:09 by cdesvern          #+#    #+#             */
-/*   Updated: 2015/11/05 20:09:58 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 15:34:57 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 
-void *btree_search_item(t_btree *root, void *data_ref, int (*cmpf)(void *, void *))
+void	*btree_search_item(t_btree *root, void *data_ref,
+								int (*cmpf)(void *, void *))
 {
 	if (!root)
 		return (NULL);

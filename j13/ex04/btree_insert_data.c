@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 20:50:49 by cdesvern          #+#    #+#             */
-/*   Updated: 2015/11/05 19:58:46 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 15:35:42 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	*btree_node_fit(t_btree *node, void *item, int (*cmpf)(void *, void *))
 {
 	t_btree	*fit;
+
 	if ((*cmpf)(node->item, item) > 0)
 	{
 		if (node->right)
@@ -37,7 +38,8 @@ void	*btree_node_fit(t_btree *node, void *item, int (*cmpf)(void *, void *))
 	}
 }
 
-void	btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *))
+void	btree_insert_data(t_btree **root, void *item,
+							int (*cmpf)(void *, void *))
 {
 	if (!*root)
 		*root = btree_create_node(item);
