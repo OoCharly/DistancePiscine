@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 12:29:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/12 10:40:54 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 12:24:34 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int		ft_strcmp(char *s1, char *s2);
 int		we_are_legion(int *fd, int *i, char **av, char *buff);
 void	ft_print_offset(int ct);
 
+#include <stdio.h>
 #endif

@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 17:11:42 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/12 11:30:17 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 12:32:14 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ int		ft_get_option_pos(char **av)
 	g_option = 0;
 	return (0);
 }
+void	ft_grand_final(char *buff, int temp)
+{
+	ft_print(buff, temp);
+	ft_print_offset(g_offset);
+	write(1, "\n", 1);
+}
 
 int		main(int ac, char **av)
 {
@@ -52,6 +58,7 @@ int		main(int ac, char **av)
 	int		fd;
 	int		temp;
 
+	temp = -1;
 	opt = ft_get_option_pos(av);
 	if (ac < 2 || (ac == 2 && opt) )
 		return (0);
@@ -60,14 +67,14 @@ int		main(int ac, char **av)
 		i++;
 	while (ft_open(av[i], &fd) < 0 && av[i])
 		i++;
-	temp = ft_create_buffer(&fd, &i, av, buff);
+	if (av[i])
+		temp = ft_create_buffer(&fd, &i, av, buff);
 	while (temp == 16 && av[i])
 	{
 		ft_print(buff, temp);
 		temp = we_are_legion(&fd, &i, av, buff);
 	}
-	ft_print(buff, temp);
-	ft_print_offset(g_offset);
-	write(1, "\n", 1);
+	if (temp >= 0)
+		ft_grand_final(buff, temp);
 	return (0);
 }

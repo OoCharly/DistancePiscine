@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:00:34 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/09 18:11:10 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 12:32:06 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_open(char *filename, int *fd)
 {
+	if (!filename)
+		return (-1);
 	*fd = open(filename, O_RDONLY);
 	if (*fd < 0)
 	{
