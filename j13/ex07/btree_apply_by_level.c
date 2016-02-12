@@ -6,11 +6,14 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 20:19:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 22:55:58 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 13:11:29 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
+
+int		g_fstnode;
+int		g_level;
 
 void	btree_apply_at_lvl(t_btree *root, void (applyf)(void *item,
 				int current_level, int is_first), int lvl)

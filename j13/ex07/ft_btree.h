@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 19:04:58 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/01/27 19:11:18 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/12 12:09:36 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ typedef struct		s_btree
 }			t_btree;
 t_btree	btree_create_node(void *item);
 
+int			g_fstnode;
 #endif
