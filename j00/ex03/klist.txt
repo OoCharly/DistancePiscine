@@ -1,0 +1,5 @@
+Credentials cache: API:16032
+        Principal: cdesvern@42.FR
+
+  Issued                Expires               Principal
+Oct 13 15:20:51 2015  Oct 14 01:20:51 2015  krbtgt/42.FR@42.FR
