@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/13 15:03:25 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/15 17:10:28 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		ft_get_info_map(int fd)
 	{
 		read(fd, &buff, 1);
 		first_line[i++] = buff;
+		if (buff == '\n')
+			break ;
 	}
 	if (i < 4)
 		return (0);
@@ -58,7 +60,7 @@ int		ft_get_info_map(int fd)
 	return (1);
 }
 
-char	*ft_get_line(char *buff)
+char	*ft_get_line(int fd, char *buff)
 {
 	char	*line;
 

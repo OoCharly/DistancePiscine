@@ -6,13 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 13:17:01 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/13 15:03:32 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/15 17:10:25 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
 
-int		ft_check_line(char fd)
+int		ft_check_line(int fd)
 {
 	int		i;
 	int		n;
@@ -57,3 +57,20 @@ int		ft_check_map(int fd)
 	return (1);
 }
 
+int		ft_create_init_tabs(int **neg, int **line)
+{
+	int		i;
+
+	if (!(*neg = malloc(sizeof(int) * g_map.len)))
+		return (0);
+	if (!(*line = malloc(sizeof(int) * g_map.len)))
+		return (0);
+	i = 0;
+	while (i < g_map.len)
+	{
+		(*neg)[i] = 0;
+		(*line)[i] = 0;
+		i++;
+	}
+	return (1)
+}
