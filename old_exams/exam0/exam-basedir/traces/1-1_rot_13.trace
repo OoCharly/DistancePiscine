@@ -1,0 +1,108 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r2p12.42.fr
+Darwin 15.2.0 x86_64
+$> date
+Tue Jan 12 11:04:45 CET 2016
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+$> clang --version
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2016/piscine-c-a-distance-c-exam-training/exam_20160112/cdesvern
+
+= Git history ==================================================================
+$> git -C /var/folders/4w/zjwwn9q14_j1x0trc7kp4f8c0000gq/T/tmp_gZ2rU/user log --pretty='%H - %an, %ad : %s'
+32d1e6c6f1c0bf6861d453449be173c18db363ca - Charles-henry DESVERNAY, Tue Jan 12 11:04:32 2016 +0100 : rot_13
+eab118c567497cc6591e7574367c1281d878f78b - Charles-henry DESVERNAY, Tue Jan 12 10:39:12 2016 +0100 : rotone.c
+fd0c82b3e307360005ea322a1c6a9a2decab4be5 - Charles-henry DESVERNAY, Tue Jan 12 10:37:20 2016 +0100 : rotone
+4ccacc4b5d6d7cb2105667a79b5070ab7791056b - Charles-henry DESVERNAY, Tue Jan 12 10:23:08 2016 +0100 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/4w/zjwwn9q14_j1x0trc7kp4f8c0000gq/T/tmp_gZ2rU/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1038 Jan 12 11:04 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 11:04 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 11:04 rot_13
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 11:04 rotone
+
+/var/folders/4w/zjwwn9q14_j1x0trc7kp4f8c0000gq/T/tmp_gZ2rU/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1112 Jan 12 11:04 maff_revalpha.c
+
+/var/folders/4w/zjwwn9q14_j1x0trc7kp4f8c0000gq/T/tmp_gZ2rU/user/rot_13:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1360 Jan 12 11:04 rot_13.c
+
+/var/folders/4w/zjwwn9q14_j1x0trc7kp4f8c0000gq/T/tmp_gZ2rU/user/rotone:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1277 Jan 12 11:04 rotone.c
+ 
+= rot_13 =======================================================================
+$> clang -Wextra -Wall -Werror rot_13.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./eifqydte0qwlaq3qljxa03ay 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./twz5105xubk5g8bl4zqdw1s9 "IK3kcFi"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./mhozxfa4kby1rgh2gsild52h "b0Cle2TI"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./m7794a4gaidwvp74j3dmajbh "VcAUs1zmIyQ"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./krluu2mrztlbnyi9mmoddqzq "rYztWc4Rd3w V8LbEJGdapK KUmOynZ6BF bSc9atlU7NH n2uI5CyOKd08 ZSe5B86sjhTRvN FoEcyYj dvUx9KYO8ugi0j hCfl4vONbF982HI PlMKFrxINGRfOso DbPugikU1"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./62ekbtermcvn8ylyp0j8fho4 "fDSNL NGjD1 Lsd2boEO HjdAioQWCq pjWEwudV L81O9TCP B7GTJOWh5 zuMB nB8ZxOAVHQdp RJEcyI8Fe kTLl7 4R8lirypKfJHz0NMI 5EjtZm7FGzYnOM 2IC a7G 6yaj"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./8j6eum4915x5sbnoz0n8yv7o "OkcTIACyJ6s4 DeFas k34tpVTfKg9FXMnN COfEeLRsD m3crjBsepMuJ58Ad Pnq7y VsQ qDxuIBi60P WnrCo2X8pAig QDwk F01r t5m8ZRoawNnM0iO 4eYc 9hkwX02n6mzFMNabR wco4mW6ngf M3YS9AsIaKhgom2 JdCoMprAv1fFgUEmR"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./zwkhoo7sp2zhnk1w3tvxzbz0 "X0BzpJc85" "2Kq" "zJTAylHq" "oIHyW0Zjp89" "zcKxQL" "ugTI" "XtAOZKmDfSb2" "g6qrel" "AjonFb" "ZbS" "fcpstRuvNewYx49"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./x9d4k3mud6lo1f4st7xawyiq "pgPa0Wqjux" "Tjs2y8oYWDCZtGfMH" "FHcRdr" "zoFceMXjm" "fApadXxSt" "3oNJn7R8PLdAFUs"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./lb6h324jq51pao0tr69u9iz5 "VZ6LqGERNDnJSge xFuh BLk47f8GYNlX CyOKDlUW6AIji XdcbqvLp2V iMPR3 KhN0QC786x2 VMu9Tr Wn19QHA3DY NKRHzob6w x2S9FX tra3fMTCGiEP5Sv zOjxe62k Cx6GiPEFs3e" "9Am ylG1J4Risx ASour7XKWQ SR3DZrl5A G1U085Fd7aYsKx hP1fXHe nWKh 2gR3Gt e5B63wQVY saI 9PCTsfJlrEZO3kiD EjOnGPzk90ybDJgMp 62Gp0KfIe 9ajgJbPQN IQr" "v0wc ckyvIsx JPTE o57v 0oETUFRc fuR8qbn" "S8cC9yifIo1geLw5D 5RAYGUNoIwcrg3td cY0 bcF2rNLI tlkTosOF kbOq KqptTc2mD6WoGfbn 6dyc q76UcfHSW f2UZBjpbd LhEfBz9v3 z012Y w7XW6LiClFU20jSo"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./qd0u7hr9757sjihihtlw3sl4 "GOaqRMp0wn Yv1p vVgx3EShD mZqgW y3NZIB kvU7JVYDdC 6PLhxiZfzUr 075b9UhqA8HWI" "gumeOLMSEW 5dsiWq8 MH6FKdnX VIwyYzHC 9d0EliRt czeo8Yv uLd8PlmQNDjywY 38hkXwFDnA Coe3umDi59G 9zHNcmGDgLl 86xeQbOzPEoNJ cOA59r7idR Q9OCEKPDTrel mLTlJ5Sn mhZDzl784oM RuUkz yewuQgG3LnFPxrlmS" "P4Ek6jUSrp kzy98KNMC5PGbm3et 4tRUENuJSdjWhKs0 G14HQoIR NVQU8GcKnR0DhH 4AEY giNuPoJ zX9 fw2ZHDAK Cou S4OrkRWKz7ZXsAC emEQrtR6T uvdl JcF1MjvP3OR NOkuV OxjqY5TEb8 3q7zJ" "7eyVBSY1P8 fL9xmgjSAH7e8TDXQ rQGIU eu5CdH1JDb0 SVTz3XCxLO CMDeNuv MFErvYs6p3myIH xnVZ0oJAPc5 AxWVqNEhFspTim SdAONi wHD2i D8nklmI6YQ1fUTNPy ly3Rm6Lb pZIftwEValj5U HdyhfG3Kpec21UY6 NYXAK0x8k7Vrvo"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

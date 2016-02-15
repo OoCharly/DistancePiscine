@@ -1,0 +1,90 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r12p21.42.fr
+Darwin 15.2.0 x86_64
+$> date
+Tue Jan 12 13:59:12 CET 2016
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+$> clang --version
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2016/piscine-c-a-distance-c-exam-training/exam_20160112/cdesvern
+
+= Git history ==================================================================
+$> git -C /var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user log --pretty='%H - %an, %ad : %s'
+32ed7b4ded55742076d52f61882fa8b1614a4b7a - Charles-henry DESVERNAY, Tue Jan 12 13:59:01 2016 +0100 : brainfuck
+d1ec4bf3647cba05bbbc96cbf366513d37bf5447 - Charles-henry DESVERNAY, Tue Jan 12 12:47:48 2016 +0100 : rev_wstr
+bfa690846c14df1b806812dd881f9b261d7de7b9 - Charles-henry DESVERNAY, Tue Jan 12 11:31:13 2016 +0100 : ft_list_size
+af2c295086911687b01956f92307c4825415590b - Charles-henry DESVERNAY, Tue Jan 12 11:19:36 2016 +0100 : swap_bits
+32d1e6c6f1c0bf6861d453449be173c18db363ca - Charles-henry DESVERNAY, Tue Jan 12 11:04:32 2016 +0100 : rot_13
+eab118c567497cc6591e7574367c1281d878f78b - Charles-henry DESVERNAY, Tue Jan 12 10:39:12 2016 +0100 : rotone.c
+fd0c82b3e307360005ea322a1c6a9a2decab4be5 - Charles-henry DESVERNAY, Tue Jan 12 10:37:20 2016 +0100 : rotone
+4ccacc4b5d6d7cb2105667a79b5070ab7791056b - Charles-henry DESVERNAY, Tue Jan 12 10:23:08 2016 +0100 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  2174 Jan 12 13:59 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 brainfuck
+drwxr-xr-x  4 deepthought  deepthought   136 Jan 12 13:59 ft_list_size
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 rev_wstr
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 rot_13
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 rotone
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:59 swap_bits
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/brainfuck:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1911 Jan 12 13:59 brainfuck.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/ft_list_size:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1021 Jan 12 13:59 ft_list.h
+-rw-r--r--  1 deepthought  deepthought  1071 Jan 12 13:59 ft_list_size.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1112 Jan 12 13:59 maff_revalpha.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1621 Jan 12 13:59 rev_wstr.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/rot_13:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1360 Jan 12 13:59 rot_13.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/rotone:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1277 Jan 12 13:59 rotone.c
+
+/var/folders/gj/m4p1jh4j45g5w3cpsc4__47r0000gq/T/tmpXdN8SH/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1259 Jan 12 13:59 swap_bits.c
+ 
+= brainfuck ====================================================================
+$> clang -Wextra -Wall -Werror brainfuck.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./ym2zcot7v55bo9ldzdd5jze4 "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>."
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2016-01-12 13:59:13.000000000 +0100$
++++ test1.output	2016-01-12 13:59:13.000000000 +0100$
+@@ -1,2 +1 @@$
+-	^K^R^R^U^E^X^U^X^R$
+-^F^A^R#**-^O!-0*"^P^G$
+\ No newline at end of file$
++Hello World!$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

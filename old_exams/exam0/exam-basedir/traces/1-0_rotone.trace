@@ -1,0 +1,57 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r11p2.42.fr
+Darwin 15.2.0 x86_64
+$> date
+Tue Jan 12 10:39:41 CET 2016
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+$> clang --version
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2016/piscine-c-a-distance-c-exam-training/exam_20160112/cdesvern
+
+= Git history ==================================================================
+$> git -C /var/folders/xk/_nkk9gfd6ln46z3xtv572jmw0000gq/T/tmptBEEzF/user log --pretty='%H - %an, %ad : %s'
+eab118c567497cc6591e7574367c1281d878f78b - Charles-henry DESVERNAY, Tue Jan 12 10:39:12 2016 +0100 : rotone.c
+fd0c82b3e307360005ea322a1c6a9a2decab4be5 - Charles-henry DESVERNAY, Tue Jan 12 10:37:20 2016 +0100 : rotone
+4ccacc4b5d6d7cb2105667a79b5070ab7791056b - Charles-henry DESVERNAY, Tue Jan 12 10:23:08 2016 +0100 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/xk/_nkk9gfd6ln46z3xtv572jmw0000gq/T/tmptBEEzF/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  773 Jan 12 10:39 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 12 10:39 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 12 10:39 rotone
+
+/var/folders/xk/_nkk9gfd6ln46z3xtv572jmw0000gq/T/tmptBEEzF/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1112 Jan 12 10:39 maff_revalpha.c
+
+/var/folders/xk/_nkk9gfd6ln46z3xtv572jmw0000gq/T/tmptBEEzF/user/rotone:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1277 Jan 12 10:39 rotone.c
+ 
+= rotone =======================================================================
+$> clang -Wextra -Wall -Werror rotone.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./aj20h3m4ilstl5l00rqtg8i8 "Les stagiaires du staff ne sentent pas toujours tres bon."
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2016-01-12 10:39:42.000000000 +0100$
++++ test1.output	2016-01-12 10:39:42.000000000 +0100$
+@@ -1 +1 @@$
+-Mft!tubhjbjsft!ev!tubgg!of!tfoufou!qbt!upvkpvst!usft!cpo/$
++Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

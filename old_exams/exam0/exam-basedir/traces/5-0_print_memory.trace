@@ -1,0 +1,71 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r7p10.42.fr
+Darwin 15.2.0 x86_64
+$> date
+Tue Jan 12 13:00:01 CET 2016
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+$> clang --version
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.2.0
+Thread model: posix
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2016/piscine-c-a-distance-c-exam-training/exam_20160112/cdesvern
+
+= Git history ==================================================================
+$> git -C /var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user log --pretty='%H - %an, %ad : %s'
+d1ec4bf3647cba05bbbc96cbf366513d37bf5447 - Charles-henry DESVERNAY, Tue Jan 12 12:47:48 2016 +0100 : rev_wstr
+bfa690846c14df1b806812dd881f9b261d7de7b9 - Charles-henry DESVERNAY, Tue Jan 12 11:31:13 2016 +0100 : ft_list_size
+af2c295086911687b01956f92307c4825415590b - Charles-henry DESVERNAY, Tue Jan 12 11:19:36 2016 +0100 : swap_bits
+32d1e6c6f1c0bf6861d453449be173c18db363ca - Charles-henry DESVERNAY, Tue Jan 12 11:04:32 2016 +0100 : rot_13
+eab118c567497cc6591e7574367c1281d878f78b - Charles-henry DESVERNAY, Tue Jan 12 10:39:12 2016 +0100 : rotone.c
+fd0c82b3e307360005ea322a1c6a9a2decab4be5 - Charles-henry DESVERNAY, Tue Jan 12 10:37:20 2016 +0100 : rotone
+4ccacc4b5d6d7cb2105667a79b5070ab7791056b - Charles-henry DESVERNAY, Tue Jan 12 10:23:08 2016 +0100 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1895 Jan 12 13:00 __GIT_HISTORY
+drwxr-xr-x  4 deepthought  deepthought   136 Jan 12 13:00 ft_list_size
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:00 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:00 rev_wstr
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:00 rot_13
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:00 rotone
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 12 13:00 swap_bits
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/ft_list_size:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1021 Jan 12 13:00 ft_list.h
+-rw-r--r--  1 deepthought  deepthought  1071 Jan 12 13:00 ft_list_size.c
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1112 Jan 12 13:00 maff_revalpha.c
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1621 Jan 12 13:00 rev_wstr.c
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/rot_13:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1360 Jan 12 13:00 rot_13.c
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/rotone:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1277 Jan 12 13:00 rotone.c
+
+/var/folders/n5/0012lq713c5cdl1r73ywq0hw0000gq/T/tmpg4DXOh/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1259 Jan 12 13:00 swap_bits.c
+ 
+= print_memory =================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 0 ===============================================================
