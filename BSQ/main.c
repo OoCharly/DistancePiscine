@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 20:40:32 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 20:47:38 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_copy_stdin(void)
 		return (0);
 	n = read(0, buff, BUFF_SIZE);
 	write (fd, buff, n);
-	while (n == BUFF_SIZE)
+	while (n != 0)
 	{
 		n = read(0, buff, BUFF_SIZE);
 		write(fd, buff, n);
