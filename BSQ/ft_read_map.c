@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/15 17:10:28 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 13:12:00 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int		ft_parse_param_map(char *first_line)
 		n += (str[i] - 48);
 	}
 	g_map.n_ligne = n;
-
 	if (!i)
 		return (0);
 	g_map.vide = first_line[i++];
@@ -36,7 +35,6 @@ int		ft_parse_param_map(char *first_line)
 	return (1);
 }
 
-
 int		ft_get_info_map(int fd)
 {
 	char	first_line[100];
@@ -45,7 +43,7 @@ int		ft_get_info_map(int fd)
 	char	buff;
 
 	i = 0;
-	n = read(fd, &buff, 1);
+	n = 1;
 	while (n)
 	{
 		read(fd, &buff, 1);
@@ -60,8 +58,22 @@ int		ft_get_info_map(int fd)
 	return (1);
 }
 
+int		ft_get_line_len(int fd)
+{
+	int		i;
+	char	a;
+
+	i = 0;
+	n = read(fd, &a, 1);
+	while (a != '\n' && n != 0)
+		i++;
+	if (a != '\n')
+		return (0);
+	return (i);
+}
+
 char	*ft_get_line(int fd, char *buff)
 {
 	char	*line;
 
-
+	

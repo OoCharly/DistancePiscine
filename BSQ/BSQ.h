@@ -6,12 +6,15 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:02:56 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/13 20:41:54 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 13:11:58 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
+
+# define MY_MODE	S_IRUSR | S_IWUSR 
+# define BUFF_SIZE	8192
 
 # include <stdlib.h>
 # include <unistd.h>
