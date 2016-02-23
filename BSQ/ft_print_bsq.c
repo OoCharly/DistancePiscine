@@ -6,34 +6,53 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 15:15:45 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 20:25:01 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
+int		ft_read_n_write(int fd, char *buff, int n)
+{
+	int		i;
+
+	i = read(fd, buff, n);
+	write(1, buff, i);
+	return (i);
+}
+
+void	ft_print_sq(void)
+{
+	int		i;
+
+	i = 0;
+	while (i++ < g_bsq.len)
+		write(1, &g_map.plein, 1);
+}
 
 void	ft_show_rainbow(int fd)
 {
-	int		up_left;
+	int		sq;
 	int		n;
 	char	buff[BUFF_SIZE];
 	int		i;
 
-	up_left = (g_bsq.y - 1) * (g_map.len + 1) + g_bsq.x - 1;
-	while (up_left > BUFF_SIZE)
+	ft_first_line(fd);
+	sq = (g_bsq.y - 1) * (g_map.len + 1) + g_bsq.x - 1;
+	while (sq > BUFF_SIZE)
 	{
-		read(fd, buff, BUFF_SIZE);
-		write(1, buff, BUFF_SIZE);
-		up_left -= BUFF_SIZE;
-
+		ft_read_n_write(fd, buff, BUFF_SIZE);
+		sq -= BUFF_SIZE;
 	}
-	n = read(fd, buff, BUFF_SIZE);
-	write(1, buff, (n - up_left));
+	ft_read_n_write(fd, buff, sq);
 	i = 0;
+	sq = g_map.len - g_bsq.len + 1;
 	while (i < g_bsq.len)
 	{
-		write(1, &g_map.plein, 1);
+		ft_print_sq();
+		read(fd, buff, g_bsq.len);
+		n = ft_read_n_write(fd, buff, sq);
 		i++;
 	}
-	up_left += g_map.len - g_bsq.len + 1;
-
+	while (n != 0)
+		n = ft_read_n_write(fd, buff, BUFF_SIZE);
+}

@@ -6,11 +6,20 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 16:18:58 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 13:12:02 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 19:12:36 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
+
+void	ft_first_line(int fd)
+{
+	char		i;
+
+	i = 'a';
+	while (i != '\n')
+		read(fd, &i, 1);
+}
 
 void	ft_larger_bsq(int *line, int floor)
 {
@@ -32,10 +41,11 @@ void	ft_larger_bsq(int *line, int floor)
 		i++;
 		if (n == (g_bsq.len + 1))
 		{
-			g_bsq.x = i - n;
-			g_bsq.y = floor - i;
+			g_bsq.x = i - n + 1;
+			g_bsq.y = floor - n + 1;
 			g_bsq.len++;
 			i = 0;
+			n = 0;
 		}
 	}
 }
@@ -55,6 +65,7 @@ void	ft_get_negative(int fd, int *neg)
 			neg[i] = 0;
 		i++;
 	}
+	read(fd, &a, 1);
 }
 
 void	ft_calc_floor(int *neg, int *line)
@@ -75,15 +86,16 @@ void	ft_find_bsq(int fd)
 	int		*line;
 	int		n;
 
-	ft_check_line(fd);
+	ft_first_line(fd);
 	if (!ft_create_init_tabs(&neg, &line))
 		return ;
 	n = 1;
-	while ((n <= g_map.n_line) && (g_map.len != g_bsq.len))
+	while ((n <= g_map.n_ligne) && (g_map.len != g_bsq.len))
 	{
 		ft_get_negative(fd, neg);
 		ft_calc_floor(neg, line);
 		ft_larger_bsq(line, n);
+		n++;
 	}
 	free(neg);
 	free(line);

@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 13:17:01 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 14:31:07 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 17:30:19 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int		ft_create_init_tabs(int **neg, int **line)
 		(*line)[i] = 0;
 		i++;
 	}
-	return (1)
+	return (1);
 }

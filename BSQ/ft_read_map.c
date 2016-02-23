@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 14:31:05 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 19:45:57 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		ft_get_line_len(int fd)
 {
 	int		i;
 	char	a;
+	int		n;
 
 	i = 0;
 	n = read(fd, &a, 1);
@@ -49,10 +50,9 @@ int		ft_atoi(char *str, int j)
 	return (n / 10);
 }
 
-int		ft_parse_param_map(char *str, int i, fd)
+int		ft_parse_param_map(char *str, int i, int fd)
 {
 	int		j;
-	int		n;
 
 	j = i - 1;
 	g_map.plein = str[j--];
@@ -63,6 +63,24 @@ int		ft_parse_param_map(char *str, int i, fd)
 		return (0);
 	g_map.len = ft_get_line_len(fd);
 	if (!g_map.len)
+		return (0);
+	return (1);
+}
+
+int		ft_test_map_line(fd)
+{
+	int		i;
+	char	a;
+
+	i = 1;
+	while (i < g_map.n_ligne)
+	{
+		if (ft_get_line_len(fd) != g_map.len)
+			return (0);
+		i++;
+	}
+	i = read(fd, &a, 1);
+	if (i != 0)
 		return (0);
 	return (1);
 }
@@ -92,20 +110,4 @@ int		ft_get_info_map(int fd)
 		return (0);
 	return (1);
 }
-int		ft_test_map_line(fd)
-{
-	int		i;
-	char	a;
 
-	i = 1;
-	while (i < g_map.n_line)
-	{
-		if (ft_get_line_len(fd) != g_map.len)
-			return (0);
-		i++;
-	}
-	i = read(fd, &a, 1);
-	if (i != 0)
-		return (0);
-	return (1);
-}
