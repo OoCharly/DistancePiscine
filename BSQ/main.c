@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 13:12:38 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/23 14:30:58 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_open(char *fn)
 	else
 		return (fd);
 }
+
 int		ft_copy_stdin(void)
 {
 	int		n;
@@ -46,24 +47,41 @@ int		ft_copy_stdin(void)
 	return (1);
 }
 
+void	do_magic(char *fn)
+{
+	int		i;
+	int		fd;
+	
+	fd = ft_open(fn);
+	if (fd < 0)
+		return (0);
+	i = 1;
+	if (!ft_get_info_map(fd))
+	{
+		write(1, "map error\n", 10);
+		return (0);
+	}
+	if (close(fd) < 0)
+		return (0);
+	fd = ft_open(fn);
+	ft_find_bsq(fd);
+}
+
 int		main(int ac, char **av)
 {
 	int		i;
 	int		fd;
-
+	
 	i = 1;
 	if (ac == 1)
 	{
 		ft_copy_stdin();
-		fd = ft_open("./temp/cpy_stdin");
-		if (fd > 0)
-			do_magic(fd);
+		do_magic("./temp/cpy_stdin");
 	}
 	while (i < ac)
 	{
-		fd = ft_open(av[i]);
-		if (fd > 0)
-			do_magic(fd);
+			do_magic(av[i]);
+			i++;
 	}
 	return (0);
 }
