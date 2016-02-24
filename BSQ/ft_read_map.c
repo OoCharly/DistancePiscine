@@ -6,51 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 19:45:57 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 12:19:57 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
 
-int		ft_get_line_len(int fd)
-{
-	int		i;
-	char	a;
-	int		n;
-
-	i = 0;
-	n = read(fd, &a, 1);
-	while (a != '\n' && n != 0)
-	{
-		n = read(fd, &a, 1);
-		if (a != '\n' && a != g_map.vide && a != g_map.obstacle)
-			return (0);
-		i++;
-	}
-	if (a != '\n')
-		return (0);
-	return (i);
-}
-
-int		ft_atoi(char *str, int j)
-{
-	int		i;
-	int		n;
-
-	i = 0;
-	n = 0;
-	while(i <= j)
-	{
-		if (str[i] < 48 || str[i] > 57)
-			return (0);
-		n += str[i] - 48;
-		n *= 10;
-		i++;
-	}
-	return (n / 10);
-}
-
-int		ft_parse_param_map(char *str, int i, int fd)
+int		ft_parse_param_map(char *str, int i)
 {
 	int		j;
 
@@ -61,28 +23,63 @@ int		ft_parse_param_map(char *str, int i, int fd)
 	g_map.n_ligne = ft_atoi(str, j);
 	if (!g_map.n_ligne)
 		return (0);
-	g_map.len = ft_get_line_len(fd);
-	if (!g_map.len)
-		return (0);
 	return (1);
 }
 
-int		ft_test_map_line(fd)
+int		ft_test_line(char *buff, int *ct, int *n, int fd)
 {
 	int		i;
-	char	a;
+	int		out;
+	char	*tmp;
 
-	i = 1;
-	while (i < g_map.n_ligne)
+	i = 0;
+	out = 0;
+	tmp = &buff[*ct];
+	while (tmp[i] != '\n' && (*n) != 0)
 	{
-		if (ft_get_line_len(fd) != g_map.len)
+		if (tmp[i] != g_map.vide && tmp[i] != g_map.obstacle)
 			return (0);
 		i++;
+		out++;
+		if (++(*ct) == (*n))
+		{
+			*n = read(fd, buff, BUFF_SIZE);
+			i = 0;
+			*ct = 0;
+			tmp = &buff[0];
+		}
 	}
-	i = read(fd, &a, 1);
-	if (i != 0)
+	(*ct)++;
+	return (out);
+}
+
+int		ft_test_map(int fd)
+{
+	int		ct;
+	int		n;
+	int		nl;
+	char	buff[BUFF_SIZE];
+
+	nl = 1;
+	ct = 0;
+	n = read(fd, buff, BUFF_SIZE);
+	g_map.len = ft_test_line(buff, &ct, &n, fd);
+	if (!g_map.len)
 		return (0);
-	return (1);
+	while (n != 0 && nl < g_map.n_ligne)
+	{
+		if (ft_test_line(buff, &ct, &n, fd) != g_map.len)
+			return (0);
+		nl++;
+		if (ct == n)
+		{
+			n = read(fd, buff, BUFF_SIZE);
+			ct = 0;
+		}
+	}
+	if (n != 0 || nl != g_map.n_ligne)
+		return (0);
+	else return (1);
 }
 
 int		ft_get_info_map(int fd)
@@ -104,9 +101,9 @@ int		ft_get_info_map(int fd)
 	}
 	if (i < 4)
 		return (0);
-	if (!ft_parse_param_map(first_line, i, fd))
+	if (!ft_parse_param_map(first_line, i))
 		return (0);
-	if (!ft_test_map_line(fd))
+	if (!ft_test_map(fd))
 		return (0);
 	return (1);
 }

@@ -6,13 +6,13 @@
 #*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/02/23 17:16:09 by cdesvern          #+#    #+#             *#
-#*   Updated: 2016/02/23 19:09:08 by cdesvern         ###   ########.fr       *#
+#*   Updated: 2016/02/24 14:06:57 by cdesvern         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
 NAME = bsq
 FLAGS = -Wall -Wextra -Werror
-SRC = main.c ft_find_bsq.c ft_print_bsq.c ft_read_map.c ft_util.c
+SRC = main.c ft_find_bsq.c ft_print_bsq.c ft_read_map.c ft_util.c 
 OBJ =
 
 all: $(NAME)
@@ -25,10 +25,5 @@ clean:
 
 fclean: clean
 	/bin/rm -f $(NAME)
-
-debug:
-	clang $(SRC) -o $(NAME)
-
-rebug: fclean debug
 
 re: fclean all

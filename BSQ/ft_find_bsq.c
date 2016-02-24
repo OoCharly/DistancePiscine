@@ -6,11 +6,25 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 16:18:58 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/23 19:12:36 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:07:42 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
+
+int		ft_create_init_tab(int **line, char **buff)
+{
+	int		i;
+
+	if (!(*buff = malloc(sizeof(char) * (g_map.len + 1))))
+		return (0);
+	if (!(*line = malloc(sizeof(int) * g_map.len)))
+		return (0);
+	i = 0;
+	while (i < g_map.len)
+		(*line)[i++] = 0;
+	return (1);
+}
 
 void	ft_first_line(int fd)
 {
@@ -31,8 +45,8 @@ void	ft_larger_bsq(int *line, int floor)
 	while (i < g_map.len)
 	{
 		if ((floor == g_bsq.len) ||
-		((n + g_map.len - i) < (g_bsq.len + 1)) ||
-		(g_bsq.len == g_map.len))
+				((n + g_map.len - i) < (g_bsq.len + 1)) ||
+				(g_bsq.len == g_map.len))
 			break ;
 		if (line[i] > g_bsq.len)
 			n++;
@@ -44,59 +58,43 @@ void	ft_larger_bsq(int *line, int floor)
 			g_bsq.x = i - n + 1;
 			g_bsq.y = floor - n + 1;
 			g_bsq.len++;
-			i = 0;
+			i = i - n + 1;
 			n = 0;
 		}
 	}
 }
 
-void	ft_get_negative(int fd, int *neg)
+void	ft_calc_line(char *buff, int *line, int fd)
 {
 	int		i;
-	char	a;
 
 	i = 0;
-	while (i < g_map.len)
+	read(fd, buff, (g_map.len + 1));
+	while(i < g_map.len)
 	{
-		read(fd, &a, 1);
-		if (a == g_map.vide)
-			neg[i] = 1;
+		if (buff[i] == g_map.vide)
+			line[i]++;
 		else
-			neg[i] = 0;
-		i++;
-	}
-	read(fd, &a, 1);
-}
-
-void	ft_calc_floor(int *neg, int *line)
-{
-	int		i;
-
-	i = 0;
-	while (i < g_map.len)
-	{
-		line[i] = (line[i] + 1) * neg[i];
+			line[i] = 0;
 		i++;
 	}
 }
 
 void	ft_find_bsq(int fd)
 {
-	int		*neg;
 	int		*line;
 	int		n;
+	char		*buff;
 
 	ft_first_line(fd);
-	if (!ft_create_init_tabs(&neg, &line))
+	if (!ft_create_init_tab(&line, &buff))
 		return ;
 	n = 1;
 	while ((n <= g_map.n_ligne) && (g_map.len != g_bsq.len))
 	{
-		ft_get_negative(fd, neg);
-		ft_calc_floor(neg, line);
+		ft_calc_line(buff, line, fd);
 		ft_larger_bsq(line, n);
 		n++;
 	}
-	free(neg);
 	free(line);
 }
