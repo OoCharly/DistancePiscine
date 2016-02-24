@@ -6,11 +6,11 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 16:18:58 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:20:33 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:42:02 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BSQ.h"
+#include "bsq.h"
 
 int		ft_create_init_tab(int **line, char **buff)
 {

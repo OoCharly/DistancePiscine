@@ -6,11 +6,11 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:19:04 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:42:44 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BSQ.h"
+#include "bsq.h"
 
 int		ft_open(char *fn)
 {

@@ -6,11 +6,11 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 09:48:37 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 11:12:12 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:44:25 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BSQ.h"
+#include "bsq.h"
 
 int		ft_atoi(char *str, int j)
 {
@@ -19,7 +19,7 @@ int		ft_atoi(char *str, int j)
 
 	i = 0;
 	n = 0;
-	while(i <= j)
+	while (i <= j)
 	{
 		if (str[i] < 48 || str[i] > 57)
 			return (0);

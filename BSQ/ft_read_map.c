@@ -6,11 +6,11 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:19:55 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:42:29 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BSQ.h"
+#include "bsq.h"
 
 int		ft_parse_param_map(char *str, int i)
 {
@@ -107,4 +107,3 @@ int		ft_get_info_map(int fd)
 		return (0);
 	return (1);
 }
-

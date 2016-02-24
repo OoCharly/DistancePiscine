@@ -6,11 +6,11 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:16:32 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:42:21 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BSQ.h"
+#include "bsq.h"
 
 int		ft_read_n_write(int fd, char *buff, int n)
 {
