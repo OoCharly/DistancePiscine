@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 16:18:58 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:07:42 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:20:33 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_calc_line(char *buff, int *line, int fd)
 
 	i = 0;
 	read(fd, buff, (g_map.len + 1));
-	while(i < g_map.len)
+	while (i < g_map.len)
 	{
 		if (buff[i] == g_map.vide)
 			line[i]++;
@@ -84,7 +84,7 @@ void	ft_find_bsq(int fd)
 {
 	int		*line;
 	int		n;
-	char		*buff;
+	char	*buff;
 
 	ft_first_line(fd);
 	if (!ft_create_init_tab(&line, &buff))

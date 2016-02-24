@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:11:19 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 12:19:57 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:19:55 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int		ft_test_map(int fd)
 	}
 	if (n != 0 || nl != g_map.n_ligne)
 		return (0);
-	else return (1);
+	return (1);
 }
 
 int		ft_get_info_map(int fd)

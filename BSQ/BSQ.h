@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 12:02:56 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 09:50:32 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:17:50 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define BSQ_H
 
 # define OPEN_MODES	O_CREAT | O_RDWR | O_TRUNC | O_APPEND
-# define MY_MODE	S_IRUSR | S_IWUSR 
-# define BUFF_SIZE	56000	
+# define MY_MODE	S_IRUSR | S_IWUSR
+# define BUFF_SIZE	56000
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -47,6 +47,5 @@ void	ft_show_rainbow(int fd);
 int		ft_get_line_len(int fd);
 void	ft_first_line(int fd);
 int		ft_atoi(char *str, int j);
-
 
 #endif

@@ -6,27 +6,20 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 13:53:29 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:16:32 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BSQ.h"
-int		ft_read_n_write(int fd, char *buff, int n) 
+
+int		ft_read_n_write(int fd, char *buff, int n)
 {
 	int		i;
-	
+
 	i = read(fd, buff, n);
 	write(1, buff, i);
 	return (i);
 }
-
-/*void	ft_print_sq(char *buff, int sq, int fd, char *sqline)
-{
-	int		i;
-
-	write(1, sqline, g_bsq.len);
-	ft_read_n_write(fd, buff, sq);
-}*/
 
 void	ft_init_sqline(char *sqline)
 {

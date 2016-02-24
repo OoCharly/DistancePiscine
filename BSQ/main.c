@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 12:19:32 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:19:04 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int		ft_copy_stdin(void)
 	int		fd;
 	char	buff[BUFF_SIZE];
 
-	fd = open("./cpy_stdin", OPEN_MODES , MY_MODE);
+	fd = open("./cpy_stdin", OPEN_MODES, MY_MODE);
 	if (fd < 0)
 		return (0);
 	n = read(0, buff, BUFF_SIZE);
-	write (fd, buff, n);
+	write(fd, buff, n);
 	while (n != 0)
 	{
 		n = read(0, buff, BUFF_SIZE);
@@ -47,7 +47,7 @@ int		ft_copy_stdin(void)
 	return (1);
 }
 
-int	do_magic(char *fn)
+int		do_magic(char *fn)
 {
 	int		i;
 	int		fd;
@@ -77,7 +77,7 @@ int	do_magic(char *fn)
 int		main(int ac, char **av)
 {
 	int		i;
-	
+
 	i = 1;
 	if (ac == 1)
 	{
