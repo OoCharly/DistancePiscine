@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:42:21 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:44:25 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ int		ft_read_n_write(int fd, char *buff, int n)
 	return (i);
 }
 
-void	ft_init_sqline(char *sqline)
+int	ft_init_sqline(char *sqline)
 {
 	int	i;
 
 	i = 0;
 	while (i < g_bsq.len)
 		sqline[i++] = g_map.plein;
+	return (1);
 }
 
 void	ft_show_rainbow(int fd)
@@ -38,7 +39,7 @@ void	ft_show_rainbow(int fd)
 	int		i;
 	char	sqline[g_bsq.len];
 
-	ft_init_sqline(sqline);
+	n = ft_init_sqline(sqline);
 	ft_first_line(fd);
 	sq = (g_bsq.y - 1) * (g_map.len + 1) + g_bsq.x - 1;
 	while (sq > BUFF_SIZE)
@@ -47,7 +48,7 @@ void	ft_show_rainbow(int fd)
 		sq -= BUFF_SIZE;
 	}
 	i = 0;
-	while (i < g_bsq.len)
+	while (i < g_bsq.len && g_bsq.len)
 	{
 		n = ft_read_n_write(fd, buff, sq);
 		read(fd, buff, g_bsq.len);

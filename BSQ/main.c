@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 14:42:44 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:49:52 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		main(int ac, char **av)
 	int		i;
 
 	i = 1;
+	g_bsq.len = 0;
 	if (ac == 1)
 	{
 		ft_copy_stdin();
