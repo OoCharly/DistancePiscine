@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 15:44:25 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 09:49:44 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_read_n_write(int fd, char *buff, int n)
 	return (i);
 }
 
-int	ft_init_sqline(char *sqline)
+int		ft_init_sqline(char *sqline)
 {
 	int	i;
 
