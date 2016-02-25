@@ -6,11 +6,18 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:50:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/24 15:49:52 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 12:57:02 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
+
+void	ft_reinit_bsq(void)
+{
+	g_bsq.x = 0;
+	g_bsq.y = 0;
+	g_bsq.len = 0;
+}
 
 int		ft_open(char *fn)
 {
@@ -88,6 +95,7 @@ int		main(int ac, char **av)
 	while (i < ac)
 	{
 		do_magic(av[i]);
+		ft_reinit_bsq();
 		i++;
 	}
 	return (0);
