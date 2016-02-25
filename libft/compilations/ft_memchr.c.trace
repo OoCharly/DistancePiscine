@@ -1,0 +1,4 @@
+ft_memchr.c:23:11: error: returning 'const void *' from a function with result type 'void *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+                        return (s + i);
+                               ^~~~~~~
+1 error generated.

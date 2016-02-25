@@ -1,0 +1,4 @@
+ft_putnbr_fd.c:15:30: error: unused parameter 'fd' [-Werror,-Wunused-parameter]
+void    ft_putnbr_fd(int n, int fd)
+                                ^
+1 error generated.

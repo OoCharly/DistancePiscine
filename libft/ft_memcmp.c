@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 12:17:02 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 12:22:10 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 20:19:09 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*(t_byte*)(s1 +i) != *(t_byte*)(s2 +i))
-			return ((int)((*(t_byte*)(s1 +i))-(*(t_byte*)(s2 +i))));
+		if (*(t_byte*)(s1 + i) != *(t_byte*)(s2 + i))
+			return ((int)((*(t_byte*)(s1 + i)) - (*(t_byte*)(s2 + i))));
 		i++;
 	}
 	return (0);

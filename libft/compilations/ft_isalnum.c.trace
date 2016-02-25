@@ -1,0 +1,11 @@
+ft_isalnum.c:17:10: error: implicit declaration of function 'ft_isdigit' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        return (ft_isdigit(c) || ft_isalpha(c));
+                ^
+ft_isalnum.c:17:10: note: did you mean 'isdigit'?
+./libft.h:27:9: note: 'isdigit' declared here
+int                                     isdigit(int c);
+                                        ^
+ft_isalnum.c:17:27: error: implicit declaration of function 'ft_isalpha' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        return (ft_isdigit(c) || ft_isalpha(c));
+                                 ^
+2 errors generated.

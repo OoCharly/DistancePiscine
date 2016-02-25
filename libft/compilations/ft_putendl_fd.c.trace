@@ -1,0 +1,7 @@
+ft_putendl_fd.c:17:2: error: implicit declaration of function 'write' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        write(1, s, ft_strlen(s));
+        ^
+ft_putendl_fd.c:15:39: error: unused parameter 'fd' [-Werror,-Wunused-parameter]
+void    ft_putendl_fd(char const *s, int fd)
+                                         ^
+2 errors generated.

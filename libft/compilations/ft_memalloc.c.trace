@@ -1,0 +1,11 @@
+ft_memalloc.c:22:11: error: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Werror,-Wsign-compare]
+        while (i < size)
+               ~ ^ ~~~~
+ft_memalloc.c:22:9: error: variable 'i' is uninitialized when used here [-Werror,-Wuninitialized]
+        while (i < size)
+               ^
+ft_memalloc.c:18:8: note: initialize the variable 'i' to silence this warning
+        int             i;
+                         ^
+                          = 0
+2 errors generated.

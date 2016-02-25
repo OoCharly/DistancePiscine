@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 15:40:38 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 15:43:29 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 20:12:41 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char	*s;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!size)

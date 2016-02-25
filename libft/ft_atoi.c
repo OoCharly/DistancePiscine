@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 14:34:01 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 15:04:59 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 20:14:48 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
+	int		sign;
 	long	out;
 
 	out = 0;
@@ -32,5 +32,5 @@ int	ft_atoi(const char *str)
 		out *= 10;
 		str++;
 	}
-	return ((int)(((long)sign * out)/10));
+	return ((int)(((long)sign * out) / 10));
 }

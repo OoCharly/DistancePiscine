@@ -6,18 +6,18 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 18:08:14 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 19:19:22 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 20:19:58 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		neg;
 	int		i;
 	char	*out;
-	
+
 	neg = (n < 0) ? 1 : 0;
 	i = 0;
 	while (n / ft_pow_ten(i))
@@ -32,11 +32,10 @@ char	*ft_itoa(int n)
 	return (out);
 }
 
-unsigned int	ft_pow_ten(int	i)
+unsigned int	ft_pow_ten(int i)
 {
 	if (i == 0)
 		return (1);
 	else
 		return (10 * ft_pow_ten(i - 1));
 }
-
