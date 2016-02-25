@@ -6,7 +6,7 @@
 /*   By: cdesvern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 14:45:00 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 09:49:44 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/25 11:01:54 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_show_rainbow(int fd)
 	i = 0;
 	while (i < g_bsq.len && g_bsq.len)
 	{
-		n = ft_read_n_write(fd, buff, sq);
+		ft_read_n_write(fd, buff, sq);
 		read(fd, buff, g_bsq.len);
 		sq = g_map.len - g_bsq.len + 1;
 		write(1, sqline, g_bsq.len);
