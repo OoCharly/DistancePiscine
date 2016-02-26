@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 18:43:46 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 16:55:30 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 18:19:01 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char		**ft_strsplit(char const *s, char c)
 
 	if (!(out = (char**)malloc(sizeof(char*) * ft_nwords(s, c))))
 		return (NULL);
-	if (!out)
+	if (!(out && s))
 		return (NULL);
 	i = 0;
 	size = 0;

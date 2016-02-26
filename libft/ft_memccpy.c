@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 11:43:48 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 12:22:38 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 17:25:44 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		*(t_byte*)dst = *(t_byte*)src;
 		if (*(t_byte*)src == (t_byte)c)
-			return (dst++);
+			return (++dst);
 		i++;
 		dst++;
 		src++;

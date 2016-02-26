@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 15:43:51 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 15:44:53 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 18:01:19 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	ft_strdel(char **as)
 {
-	free(*as);
-	*as = NULL;
+	if (as)
+	{
+		if (*as)
+		{
+			free(*as);
+			*as = NULL;
+		}
+	}
 }

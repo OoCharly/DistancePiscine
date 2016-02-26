@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 17:22:13 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 09:51:30 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 18:18:27 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s)
 	int	end;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (ft_isspace(s[i]))
 		i++;
 	start = i;
