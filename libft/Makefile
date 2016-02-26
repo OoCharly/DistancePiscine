@@ -12,6 +12,7 @@
 
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
+
 SRCS = ft_atoi.c ft_bzero.c ft_id.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_isdigit.c ft_isprint.c ft_isspace.c ft_itoa.c ft_memalloc.c \
 	ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c \
@@ -23,19 +24,20 @@ SRCS = ft_atoi.c ft_bzero.c ft_id.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c \
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
 	ft_tolower.c ft_toupper.c
-OBJS = $(SRCS:.c =.o)
+
+OBJS = $(subst .c,.o,$(SRCS_F))
 
 all: $(NAME)
 
 $(NAME):
-	clang $(FLAGS) -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@clang $(FLAGS) -c $(SRCS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJS)
+	@/bin/rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
