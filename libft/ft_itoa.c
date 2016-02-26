@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 18:08:14 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 22:29:58 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 22:35:31 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static unsigned long	ft_pow_ten(int i)
 		return (10 * ft_pow_ten(i - 1));
 }
 
-char			*ft_itoa(int n)
+char					*ft_itoa(int n)
 {
 	int		neg;
 	int		i;
