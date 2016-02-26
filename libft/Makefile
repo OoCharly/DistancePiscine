@@ -1,15 +1,3 @@
-#* ************************************************************************** *#
-#*                                      *#
-#*                            :::   ::::::::  *#
-#*  Makefile                      :+:   :+:  :+:  *#
-#*                          +:+ +:+     +:+   *#
-#*  By: cdesvern <cdesvern@42.fr>         +#+ +:+    +#+    *#
-#*                        +#+#+#+#+#+  +#+      *#
-#*  Created: 2016/02/26 10:52:57 by cdesvern     #+#  #+#       *#
-#*  Updated: 2016/02/26 10:52:57 by cdesvern     ###  ########.fr    *#
-#*                                      *#
-#* ************************************************************************** *#
-
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 
@@ -23,7 +11,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_id.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c \
 	ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c \
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
-	ft_tolower.c ft_toupper.c
+	ft_tolower.c ft_toupper.c ft_lstnew.c ft_lstdel.c ft_lstdelone.c\
+	ft_lstadd.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(subst .c,.o,$(SRCS))
 
