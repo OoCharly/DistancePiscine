@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 18:43:46 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 18:19:01 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 22:13:55 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,16 @@ char		**ft_strsplit(char const *s, char c)
 	int		size;
 	int		i;
 
-	if (!(out = (char**)malloc(sizeof(char*) * ft_nwords(s, c))))
-		return (NULL);
-	if (!(out && s))
+	if (!(out = (char**)malloc(sizeof(char*) * (ft_nwords(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	size = 0;
-	while (*out)
+	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (!*s)
-			return (out);
+			break;
 		while (s[size] != c && s[size])
 			size++;
 		out[i] = ft_strncpy(ft_strnew(size), s, size);
@@ -56,5 +54,6 @@ char		**ft_strsplit(char const *s, char c)
 			return (NULL);
 		i++;
 	}
+	out[i] = NULL;
 	return (out);
 }
