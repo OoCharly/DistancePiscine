@@ -1,4 +1,0 @@
-ft_strtrim.c:22:9: error: implicit declaration of function 'isspace' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        while (isspace(s[i]))
-               ^
-1 error generated.

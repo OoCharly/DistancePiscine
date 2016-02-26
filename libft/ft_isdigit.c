@@ -6,13 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 15:08:59 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 15:10:59 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:39:24 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c < 10 && c >= 0)
 		return (1);

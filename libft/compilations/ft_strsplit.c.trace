@@ -1,8 +1,0 @@
-ft_strsplit.c:35:11: error: incompatible pointer to integer conversion assigning to 'char' from 'char *'; dereference with * [-Werror,-Wint-conversion]
-                *out[i] = ft_strncpy(ft_strnew(size), s, size);
-                        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                          *
-ft_strsplit.c:46:7: error: unused variable 'i' [-Werror,-Wunused-variable]
-        int             i;
-                        ^
-2 errors generated.

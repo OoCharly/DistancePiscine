@@ -1,4 +1,0 @@
-ft_strlcat.c:21:18: error: use of undeclared identifier 's1'
-        len = ft_strlen(s1);
-                        ^
-1 error generated.

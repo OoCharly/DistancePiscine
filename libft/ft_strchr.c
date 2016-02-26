@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 13:49:41 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 13:55:28 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 10:15:57 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*(s + i))
 	{
 		if (*(s + i) == (char)c)
-			return (s + i);
+			return ((char*)(s + i));
 		i++;
 	}
 	if (*(s + i) == (char)c)
-		return (s + i);
+		return ((char*)(s + i));
 	return (NULL);
 }

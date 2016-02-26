@@ -1,4 +1,0 @@
-ft_putstr.c:17:2: error: implicit declaration of function 'write' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        write(1, s, ft_strlen(s));
-        ^
-1 error generated.

@@ -1,7 +1,0 @@
-ft_strrchr.c:29:10: error: returning 'const char *' from a function with result type 'char *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-                return (s + i);
-                       ^~~~~~~
-ft_strrchr.c:33:10: error: returning 'const char *' from a function with result type 'char *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-                return (s + mem);
-                       ^~~~~~~~~
-2 errors generated.

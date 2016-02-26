@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 18:37:45 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 18:38:44 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 10:50:54 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

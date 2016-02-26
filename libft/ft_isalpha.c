@@ -6,13 +6,13 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 15:05:54 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 20:12:19 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:39:11 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c > 101 && c < 133) || (c > 140 && c < 173))
 		return (1);

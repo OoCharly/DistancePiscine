@@ -1,8 +1,0 @@
-In file included from ft_strcpy.c:13:
-./libft.h:75:21: error: unused function 'ft_pow_ten' [-Werror,-Wunused-function]
-static unsigned int     ft_pow_ten(int                  i);
-                        ^
-./libft.h:76:14: error: unused function 'ft_nwords' [-Werror,-Wunused-function]
-static int                      ft_nwords(char const *s, char c);
-                                ^
-2 errors generated.

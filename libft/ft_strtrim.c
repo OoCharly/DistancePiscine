@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 17:22:13 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 20:11:58 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:51:30 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strtrim(char const *s)
 	int	end;
 
 	i = 0;
-	while (isspace(s[i]))
+	while (ft_isspace(s[i]))
 		i++;
 	start = i;
 	i = ft_strlen(s) - 1;
-	while (isspace(s[i]))
+	while (ft_isspace(s[i]))
 		i--;
 	end = i;
 	i = end - start + 1;

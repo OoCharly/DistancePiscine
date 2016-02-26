@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 13:55:47 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 13:59:15 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:48:48 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (*(s + i) == (char)c)
-		return (s + i);
+		return ((char*)(s + i));
 	if (mem < 0)
 		return (NULL);
 	else
-		return (s + mem);
+		return ((char*)(s + mem));
 }

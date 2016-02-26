@@ -1,4 +1,0 @@
-ft_tolower.c:17:11: error: implicit declaration of function 'ft_isalpha' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        return ((ft_isalpha(c) && c < 96) ? (c + 32) : c);
-                 ^
-1 error generated.

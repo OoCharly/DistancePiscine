@@ -1,5 +1,0 @@
-In file included from ft_itoa.c:13:
-./libft.h:76:14: error: unused function 'ft_nwords' [-Werror,-Wunused-function]
-static int                      ft_nwords(char const *s, char c);
-                                ^
-1 error generated.
