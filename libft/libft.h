@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/15 19:02:41 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 21:28:11 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 21:41:12 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <stdlib.h>
 
 typedef	unsigned char	t_byte;
-typedef struct		s_list
+typedef	struct			s_list
 {
-	void		*content;
-	size_t		content_size;
-	struct s_list	*next;
-}			t_list;
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}						t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
