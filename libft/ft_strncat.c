@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 13:14:57 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 18:37:05 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 19:54:52 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		return (NULL);
 	len = ft_strlen(s1);
 	i = 0;
-	while (i < n && *(s2 + i))
+	while ((i < n) && (s2[i] != '\0'))
 	{
-		*(s1 + len + i) = *(s2 + i);
+		s1[len + i] = s2[i];
 		i++;
 	}
-	*(s1 + i) = '\0';
+	s1[len + i] = '\0';
 	return (s1);
 }
