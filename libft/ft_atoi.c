@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 14:34:01 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 20:14:48 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 12:48:34 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *str)
 	int		sign;
 	long	out;
 
+	if (!str)
+		return (0);
 	out = 0;
 	sign = 1;
 	while (ft_isspace(*str))

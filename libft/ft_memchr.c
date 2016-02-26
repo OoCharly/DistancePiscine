@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 12:14:06 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 10:46:43 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 16:24:37 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (*(t_byte*)(s + i) == (t_byte)c)
 			return ((void*)(s + i));
+		i++;
 	}
 	return (NULL);
 }

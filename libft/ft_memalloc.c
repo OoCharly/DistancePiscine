@@ -6,12 +6,12 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 15:30:26 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 10:46:10 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/02/26 16:10:52 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 void	*ft_memalloc(size_t size)
 {
 	t_byte	*b;
