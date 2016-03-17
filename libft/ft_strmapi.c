@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 16:00:43 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 22:03:20 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/03/17 12:57:45 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	dst = ft_strnew(ft_strlen(s) + 1);
+	dst = ft_strnew(ft_strlen(s));
 	if (!(dst && s && f))
 		return (NULL);
 	while (*(s + i))

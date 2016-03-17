@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 13:59:28 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/26 09:51:01 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/03/17 10:28:50 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 {
 	size_t	len;
 
-	if (s2 == '\0')
+	if (*s2 == '\0')
 		return ((char*)s1);
 	len = ft_strlen(s2);
 	while (*s1)

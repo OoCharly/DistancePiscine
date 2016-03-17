@@ -6,7 +6,7 @@
 /*   By: cdesvern <cdesvern@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/25 14:24:53 by cdesvern          #+#    #+#             */
-/*   Updated: 2016/02/25 14:30:01 by cdesvern         ###   ########.fr       */
+/*   Updated: 2016/03/17 10:56:28 by cdesvern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (*s1 == *s2 && *s1 && *s2)
+	while (*(t_byte*)s1 == *(t_byte*)s2 && *(t_byte*)s1 && *(t_byte*)s2)
 	{
 		s1++;
 		s2++;
 	}
-	return ((int)(*s1 - *s2));
+	return ((int)(*(t_byte*)s1 - *(t_byte*)s2));
 }
